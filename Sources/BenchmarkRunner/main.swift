@@ -79,7 +79,11 @@ let benchmarks: [BenchmarkCase] = [
     SwitchVsIfBenchmark(),
     InlinableBenchmark(),
     StaticVsComputedBenchmark(),
-    EnumVsBoolBenchmark()
+    EnumVsBoolBenchmark(),
+    OptionalsBenchmark(),
+    OptionalChainingBenchmark(),
+    OptionalMapBenchmark(),
+    ForceUnwrapBenchmark()
 ]
 
 runner.run(benchmarks: benchmarks) 

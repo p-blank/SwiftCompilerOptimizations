@@ -15,6 +15,10 @@ Benchmarks comparing different Swift coding patterns to demonstrate compiler opt
 - @inlinable vs Regular (inlining - Swift's constexpr)
 - Static vs Computed (constant folding)
 - Enum vs Bool Flags (state optimization)
+- Optional Handling (nil checking optimization)
+- Optional Chaining (chain optimization)
+- Optional Map (functional optimization)
+- Force vs Safe Unwrap (nil check elimination)
 
 ## Usage
 
@@ -37,8 +41,20 @@ swift run BenchmarkRunner
 - ~2% improvement in optimized builds
 
 **Enum vs Bool Flags:**
-- Enum 28% faster in optimized builds
+- Enum 32% faster in optimized builds
 - Better memory layout and branch prediction
+
+**Optional Handling:**
+- Nil coalescing (??) slightly faster than if-let (3% in optimized)
+- Force unwrap vs safe unwrap: Nearly identical performance
+
+**Optional Chaining:**
+- Manual unwrapping 32% faster than chaining in optimized builds
+- Compiler struggles to optimize deep optional chains
+
+**Optional Map vs Manual:**
+- Manual unwrapping significantly faster in debug (25%)
+- Nearly identical in optimized builds (functional style optimizes well)
 
 ## Build Modes
 
