@@ -1,0 +1,7 @@
+.build/
+.swiftpm/
+*.xcodeproj
+*.xcworkspace
+.DS_Store
+results/*.json
+results/*.txt 
